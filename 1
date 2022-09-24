@@ -1,0 +1,35 @@
+using System;
+namespace Fortuna
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random random = new Random();
+            int dice;
+            string answerToContinue = "";
+
+            Console.WriteLine("Добро пожаловать в игру 'Кости'!");
+
+            while (answerToContinue != "N")
+            {
+                Console.WriteLine("\nВыполняется бросок...");
+                dice = random.Next(1, 7);
+                Console.WriteLine(dice);
+                Console.WriteLine("\nЖелаете продолжить? Y/N?");
+                answerToContinue = Console.ReadLine().ToUpper();
+
+                while (answerToContinue != "Y" && answerToContinue != "N")
+                {
+                    Console.WriteLine("Введите корректно Y(продолжить) или N(завершить)");
+                    answerToContinue = Console.ReadLine();
+                }
+
+                Console.Clear();
+            }
+            
+            Console.WriteLine("Пусть удача всегда сопутствует Вам!");
+            Console.Read();
+        }
+    }
+}
